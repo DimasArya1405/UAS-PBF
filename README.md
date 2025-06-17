@@ -11,6 +11,27 @@ git remote add origin https://github.com/username/nama-repo.git
 git branch -M main
 git push -u origin main
 
+## Instalasi Laravel dan Tailwind
+1. ```bash composer create-project laravel/laravel nama_project
+2. Masuk ke folder project
+3. ```bash npm install tailwindcss @tailwindcss/vite
+4. Modifikasi vite.config.js
+```bash import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+    // …
+  ],
+})
+5. Modifikasi app.css
+```bash @import "tailwindcss";
+@source "../views";
+6. Tambahkan di atas head
+```bash
+ @vite('resources/css/app.css')
+
+
 ## Isi Model Backend
 ```bash
 <?php
@@ -39,9 +60,6 @@ class MahasiswaModel extends Model
         "email",
     ];
 }
-
-## Instalasi Laravel dan Tailwind
-1. ```bash composer create-project laravel/laravel nama_project
 
 ## Isi Controller Backend
 ```bash
